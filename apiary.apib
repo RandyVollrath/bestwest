@@ -1,7 +1,7 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://bestwest.apiblueprint.org/
 
-# Polls API
+# BestWest API
 
 This is where 600 West tenants can find the best way to get to and from the office.
 
@@ -13,21 +13,29 @@ This is where 600 West tenants can find the best way to get to and from the offi
 
         [
             {
-                "question": "Favourite programming language?",
+                "question": "How should I transport myself?",
                 "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "options": [
                     {
-                        "choice": "Swift",
-                        "votes": 2048
+                        "direction": "westbound",
+                        "pickupLocation": "brown",
+                        "transpoMethod": "CTABus",
+                        "pickupTime": "8:30am"
                     }, {
-                        "choice": "Python",
-                        "votes": 1024
+                        "direction": "eastbound",
+                        "pickupLocation": "brown",
+                        "transpoMethod": "CTABus",
+                        "pickupTime": "8:30am"                    
                     }, {
-                        "choice": "Objective-C",
-                        "votes": 512
+                       "direction": "westbound",
+                        "pickupLocation": "brown",
+                        "transpoMethod": "shuttleBus",
+                        "pickupTime": "8:30am"
                     }, {
-                        "choice": "Ruby",
-                        "votes": 256
+                        "direction": "eastbound",
+                        "pickupLocation": "brown",
+                        "transpoMethod": "shuttleBus",
+                        "pickupTime": "8:30am"
                     }
                 ]
             }
@@ -42,8 +50,8 @@ form of choices.
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
+            "question": "How should I transport myself?",
+            "options": [
                 "Swift",
                 "Python",
                 "Objective-C",
@@ -60,9 +68,9 @@ form of choices.
     + Body
 
             {
-                "question": "Favourite programming language?",
+                "question": "How should I transport myself",
                 "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "options": [
                     {
                         "choice": "Swift",
                         "votes": 0
